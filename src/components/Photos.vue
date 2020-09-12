@@ -66,7 +66,7 @@ export default {
       try {
         const res = await axios.get(url);
         this.photos.push(res.data.results);
-        console.log(this.photos);
+        //console.log(this.photos);
       } catch (err) {
         console.log(err);
       }
@@ -83,10 +83,8 @@ export default {
     let url = `https://api.unsplash.com/search/photos?page=${this.page}&query=${this.searchText}&client_id=${clientId}`;
     try {
       const res = await axios.get(url);
-      console.log(res.data.results);
       this.photos.push(res.data.results);
-      console.log(res.data);
-      console.log(this.photos);
+      //console.log(this.photos);
     } catch (err) {
       console.log(err);
     }
@@ -95,7 +93,7 @@ export default {
       this.isVisible = true;
       this.photos.length = null;
       this.searchText = data; //Set the search value from header component
-      console.log(this.searchText);
+      //console.log(this.searchText);
       url = `https://api.unsplash.com/search/photos?page=${this.page}&query=${this.searchText}&client_id=${clientId}`;
       //API call using fetch
       fetch(url)
